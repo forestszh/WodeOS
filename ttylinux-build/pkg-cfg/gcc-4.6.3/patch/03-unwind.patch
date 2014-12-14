@@ -1,0 +1,17 @@
+	I really do not know where I got this patch. LFS?
+	2012-12-15 <douglas@ttylinux.org>
+
+--- gcc-4.6.3-OLD/gcc/config/i386/linux-unwind.h	2011-01-03 13:52:22.000000000 -0700
++++ gcc-4.6.3-NEW/gcc/config/i386/linux-unwind.h	2013-05-22 18:45:18.305670916 -0700
+@@ -133,9 +133,9 @@
+     {
+       struct rt_sigframe {
+ 	int sig;
+-	struct siginfo *pinfo;
++	siginfo_t *pinfo;
+ 	void *puc;
+-	struct siginfo info;
++	siginfo_t info;
+ 	struct ucontext uc;
+       } *rt_ = context->cfa;
+       /* The void * cast is necessary to avoid an aliasing warning.

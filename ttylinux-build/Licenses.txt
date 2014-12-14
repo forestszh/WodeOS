@@ -1,0 +1,174 @@
+============
+Licenses.txt
+============
+
+This file describes the licenses of the software and documents developed by
+the ttylinux project.
+
+Acronyms:
+        FDL - (GNU) Free Documentation License
+        GPL - (GNU) General Public License
+
+The license documents are in the ttylinux-build/doc directory as these files:
+=> FDL - ttylinux-build/doc/COPYING-documents
+=> GPL - ttylinux-build/doc/COPYING
+
+There are several types of items described in this file:
+1. ttylinux build-system scripts
+2. ttylinux build-system configuration files
+3. ttylinux run-time system scripts and configuration files
+4. ttylinux test scripts
+5. ttylinux documentation
+
+        ------------------------------------------------------------
+
+        All of these software and document files are provided with the
+        hope that they will be useful, but WITHOUT ANY WARRANTY; without
+        even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+        PARTICULAR PURPOSE.
+
+        ------------------------------------------------------------
+
+1. ttylinux build-system scripts
+
+These are all the files used to _build_ a ttylinux system that are developed
+by the ttylinux project; these are not the files that are delivered with a
+bootable ttylinux system such as CD-ROM image or other tar-file.  These files
+include, but are not limited to:
+
+=> ttylinux-build/Makefile
+=> shell script files in the various directories in ttylinux-build/bootloader/ 
+=> ttylinux-build/doc/Makefile
+=> the "bld.sh" shell script files in the directories in ttylinux-build/pkg-cfg/
+=> shell script files in ttylinux-build/scripts
+
+These ttylinux build-system scripts are copyrighted by Douglas Jerome, and any
+other people wherein noted, who wrote them.  These files are licensed under the
+GPL Version 2 (June 1991), not version 2.2 or version 3.x or any other version,
+unless explicitly otherwise stated.
+
+        --------------------------------------------------
+
+2. ttylinux build-system configuration files
+
+There are various configuration files used during a ttylinux build process;
+these files are read by the make or bash programs (or any other programs so
+used) under the programming direction of the various ttylinux build scripts.
+These files are not considered to be "executable" as are the build scripts.
+
+These files include, but are not limited to:
+
+=> any file so used in the various directories in ttylinux-build/bootloader/
+=> the configuration files in the various directories in ttylinux-build/config/
+=> the "files" files in the various directories in ttylinux-build/pkg-cfg/
+=> ttylinux-build/ttylinux-config.sh
+=> ttylinux-build/ttylinux-pkglst.txt
+
+As any non-trivial thing written, these files are copyrighted; they are
+copyrighted by Douglas Jerome, and any other people wherein noted, who wrote
+them.  These files are licensed under any "do whatever you want with" license
+you can find or create; they are provided without any restriction.
+
+        --------------------------------------------------
+
+3. ttylinux run-time system scripts and configuration files
+
+There ttylinux run-time system scripts and configuration files are part of a
+delivered ttylinux system; they are in the bootable ttylinux CD-ROM image or
+tar-file containing the bootable ttylinux system.  These files do reside in the
+ttylinux build-system directory structure; they are put into the ttylinux
+run-time system during a build process.
+
+In the ttylinux build-system directory structure, these files include, but are
+not limited to:
+
+=> any file so used in the various directories in ttylinux-build/bootloader/
+=> any file so used in the various directories in ttylinux-build/config/
+=> any file so used in the various directories in ttylinux-build/pkg-cfg/
+
+NOTICE -> The various ttylinux run-time system scripts and configuration files
+          used as described in this section that are in the various directories
+          in:
+
+          => ttylinux-build/bootloader/
+          => ttylinux-build/config/
+
+          are intended to be changed as needed by ttylinux end-users and people
+          making their own custom ttylinux builds.  Although, ANY CHANGES TO
+          THESE FILES MAY RESULT IN A SYSTEM THAT WILL NOT BOOT, OR HAVE SOME
+          OTHER UNDESIRABLE AFFECT and may not be supported, it is the nature
+          of some of these files to be changed to reflect various users' needs.
+
+          As any non-trivial thing written, these files are copyrighted; they
+          are copyrighted by Douglas Jerome, and any other people wherein
+          noted, who wrote them.
+
+          These files are licensed under any "do whatever you want with"
+          license you can find or create; they are provided without any
+          restriction.
+
+ttylinux-build/pkg-cfg/ Files
+-----------------------------
+
+In several of the various directories in ttylinux-build/pkg-cfg/ there is a
+file named rootfs.tar.bz2; this is a compressed tar-file that has one or more
+files that will reside in a bootable ttylinux system (this is called the
+run-time system to distinguish it from the ttylinux build-system).  In the
+ttylinux run-time system these files are, but not limited to be:
+
+=> configuration files in /etc/ and its subdirectories
+=> (sys init scripts) shell scripts in /etc/rc.d/ and its subdirectories
+=> /sbin/ttylinux-flash
+=> /sbin/ttylinux-installer
+=> /usr/bin/pacman
+=> /usr/share/udhcpc/default.script
+
+For the configuration files, see the NOTICE in this section above.
+
+These ttylinux run-time scripts are copyrighted by Douglas Jerome, and any
+other people wherein noted, who wrote them.  These files are licensed under the
+GPL Version 2 (June 1991), not version 2.2 or version 3.x or any other version,
+unless explicitly otherwise stated.
+
+        --------------------------------------------------
+
+4. ttylinux test scripts
+
+These are all the files used to _test_ a ttylinux system that are developed
+by the ttylinux project; these are not the files that are delivered with a
+bootable ttylinux system such as CD-ROM image or other tar-file.  These files
+include, but are not limited to:
+
+=> files in ttylinux-build/test directory
+
+As any non-trivial thing written, these files are copyrighted; they are
+copyrighted by Douglas Jerome, and any other people wherein noted, who wrote
+them.  These files are licensed under any "do whatever you want with" license
+you can find or create; they are provided without any restriction.
+
+        --------------------------------------------------
+
+5. ttylinux documentation
+
+NOTICE -> The various "how to" and help files in the ttylinux-build/ directory
+          are as any non-trivial thing written, these files are copyrighted;
+          they are copyrighted by Douglas Jerome, and any other people wherein
+          noted, who wrote them.  These files are licensed under any "do
+          whatever you want with" license you can find or create; they are
+          provided without any restriction.
+
+The ttylinux change logs, specific "how to" documents, and the ttylinux User
+Guide are files that include, but are not limited to:
+
+=> change log files in the ttylinux-build/doc/
+=> ttylinux-build/doc/Flash_Disk_Howto.txt
+=> ttylinux-build/doc/User_Guide.html
+=> ttylinux-build/doc/User_Guide.pdf
+=> ttylinux-build/doc/User_Guide.tex
+
+These ttylinux documentation files are copyrighted by Douglas Jerome, and any
+other people wherein noted, who wrote them.  These files are licensed under the
+FDL Version 1.3 (3 November 2008), not any other version, unless explicitly
+otherwise stated.
+
+[eof]

@@ -1,0 +1,67 @@
+=================
+1. Build Problems
+=================
+
+-------------------------------------
+1.1. ttylinux Build-time awk Problems
+-------------------------------------
+
+Only GNU awk will work.  If you have mawk, replace it with GNU awk.
+Get the latest gawk tarball at http://ftp.gnu.org/gnu/gawk/
+Or Debian:
+   $ apt-get install gawk
+   $ apt-get remove mawk
+Or Fedora:
+   $ yum install gawk
+   $ yum erase mawk
+
+---------------------------------
+1.2. xbuildtools bintuils problem
+---------------------------------
+-- I don't know for what versions of binutils and ArchLinux this happened;
+   maybe this issue is Overcome By Events. [drj]
+Weird problem when building under ArchLinux i686 host: "makeinfo" is missing;
+it appears to be looking for bfd/docs/*.texi files in the build directory, even
+though they are actually in the source directory.  Do this:
+   $ mkdir -p bfd/doc
+   $ cp -a ../${XBT_BINUTILS}/bfd/doc/* bfd/doc
+
+-----------------------
+1.3. lilo Build Problem
+-----------------------
+
+You need the dev86 package to build lilo.
+Get Dev86src-0.16.18.tar.gz at http://www.debath.co.uk/dev86/
+http://www.debath.co.uk/dev86/Dev86src-0.16.18.tar.gz
+Or Debian:
+   $ apt-get install bin86
+Or Fedora:
+   $ yum install dev86
+
+
+====================
+2. Run-time Problems
+====================
+
+     This section describes problems that you have when booting or running
+     ttylinux.
+
+--------------------------
+2.1. bash Run-time Problem
+--------------------------
+
+You built ttylinux and find the $(...) construct does not work; you have this
+weird bash behavior:
+
+     $ echo $(ls)
+     bash: command substitution: line 78: syntax error near unexpected token `)'
+     bash: command substitution: line 78: `ls)'
+
+You need to build bash with a better bison (yacc) on your host. bash uses yacc
+grammar rules and your yacc does not generate the correct parsing code for the
+bash build.
+
+Get the latest bison tarball at http://ftp.gnu.org/gnu/bison/
+
+
+[eof]

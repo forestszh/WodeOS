@@ -1,0 +1,77 @@
+
+-----------------------------------------------------------------------
+
+How to use Debian 6.0 "Squeeze" Lenny for building ttylinux:
+
+=> I installed Debian 6.0.6 with "debian-6.0.6-i386-CD-1.iso", choosing the
+   Gnome desktop packages.
+
+=> I found I was missing vim and openssh (to remotely log-in), so interactively
+   used /usr/bin/aptitude to get them.  The installation process asked me to
+   put in the install CD, so I did.
+
+=> Make sure packages are up-to-date:
+
+   $ apt-get clean all
+   $ apt-get update
+   $ apt-get upgrade
+
+=> Then, these were the packages I had to get for building ttylinux.  The
+   installation process for "make" asked me to put in the install CD, so I did,
+   and I left it there.
+
+   $ apt-get install gawk  # The order is important wrt mawk.
+   $ apt-get remove mawk   # The order is important wrt gawk.
+
+   $ apt-get install make
+   $ apt-get install binutils
+   $ apt-get install g++  # This also gets gcc which is needed more than g++.
+   $ apt-get install bison
+   $ apt-get install bin86
+   $ apt-get install autoconf
+   $ apt-get install automake
+   $ apt-get install libtool
+
+   Maybe use:
+
+   $ apt-get install autoconf automake bin86 binutils bison g++ make
+
+   This is what worked for me; depending upon installation variations you may
+   need to install more things.  It doesn't hurt to apt-get something you
+   already have, so maybe get the things that will be used:
+
+   $ apt-get install bzip2 flex genisoimage ncurses-dev xz
+
+djerome 2013-06-01
+
+-----------------------------------------------------------------------
+
+How to use Debian Lenny for compilling ttylinux:
+
+- Install Debian 5.0.7 from the netinstall.iso, choose only the base packages,
+  not the desktop packages etc.
+- touch /etc/apt/apt.conf
+- vi /etc/apt/apt.conf
+
+     APT::Install-Recommends "0";
+     APT::Install-Suggests "0";
+
+- apt-get clean all
+- apt-get update
+- apt-get upgrade
+- apt-get install build-essential autoconf automake bzip2 mkisofs bin86 gawk \
+          flex bison ncurses-dev docbook-utils
+
+***** This paragraph is out-of-date [djerome 2012-03-09]:
+***** docbook-utils, from my point of view, adds too many additional packages,
+***** see this post for how you can compile ttylinux without docbook2man:
+***** http://minimalinux.org/forum/viewtopic.php?id=462
+
+I hope this short how to is useful for you!
+Happy ttylinux developing/compiling :-)
+
+best regards,
+Schwan
+
+-----------------------------------------------------------------------
+

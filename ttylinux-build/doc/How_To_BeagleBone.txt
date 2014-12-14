@@ -1,0 +1,145 @@
+#!/bin/bash
+
+# ============================
+# ttylinux v16.0, Kernel 3.8.4
+# ============================
+
+# BeagleBone ttylinux 16.0 uses this kernel (it is a script for a kernel get
+# and patch proces):
+#
+# https://github.com/beagleboard/kernel/tree/
+# 3.8 branch
+
+# And a binary firmware file:
+# http://arago-project.org/git/projects/?p=am33x-cm3.git;a=tree;f=bin;h=dc6e79180b8c468832e684d631818af31448bd81;hb=HEAD
+
+# The file kernel-3.8.zip is un-zipped, and then its script is executed; this
+# script gets and patches the 3.8 kernel.  The binary firmware is added to the
+# source tree, and then this kernel 3.8 source tree is then tarred-up.  This
+# new linux-3.8.4.tar.bz2 is used by xbuildtools and the ttylinux build system
+# to make BeagleBone ttylinux v16.0.
+
+# Step 1 -- Get the kernel getting script and the firmware binary file.
+#
+wget https://github.com/beagleboard/kernel/archive/3.8.zip -O kernel-3.8.zip
+wget http://arago-project.org/git/projects/?p=am33x-cm3.git\;a=blob_plain\;f=bin/am335x-pm-firmware.bin\;hb=HEAD -O am335x-pm-firmware.bin
+
+# Step 2 -- Unzip and combine.
+#
+unzip kernel-3.8.zip
+mv am335x-pm-firmware.bin kernel-3.8/
+
+# Step 3 -- Project-local stuff: ignore.
+#
+#ignore: rm kernel-3.8.zip
+#ignore: _DIR=~/projects/ttylinux/_platform-beaglebone
+#ignore: rm -rf ${_DIR}/kernel-3.8/
+#ignore: mv kernel-3.8/ ${_DIR}
+#ignore: cd ${_DIR}
+#ignore: unset _DIR
+
+# Step 4 -- Get the kernel source tree, patch it, clean it, and put into it the
+#           firmware file.
+#
+cd kernel-3.8/
+./patch.sh # this script gets and patches the kernel source tree
+find kernel -depth -name .git -exec rm -rf {} \;
+find kernel -depth -name .gitignore -exec rm {} \;
+find kernel -depth -name .mailmap -exec rm {} \;
+cp am335x-pm-firmware.bin kernel/firmware/
+mv kernel linux-3.8.4/
+tar cjf linux-3.8.4.tar.bz2 linux-3.8.4/
+
+# Step 5 -- Put the kernel source tree into a useful place.
+#
+mv linux-3.8.4.tar.bz2 ~/Downloads/
+
+# Step 5 -- Re-get the BeagleBone kernel config file: ignore.
+#
+#ignore: chmod 644 ~/Downloads/linux-3.8.4.tar.bz2
+#ignore: _DIR=~/projects/ttylinux-dev/ttylinux-build/config
+#ignore: rm -f ${_DIR}/platform-beagle_bone/kernel-3.8.4.cfg
+#ignore: cp configs/beaglebone ${_DIR}/platform-beagle_bone/kernel-3.8.4.cfg
+#ignore: chmod 400 ${_DIR}/platform-beagle_bone/kernel-3.8.4.cfg
+#ignore: unset _DIR
+
+# ======================================
+# xbuildtools, make the cross-tool chain
+# ======================================
+
+# Make the BeagleBone ttylinux cross-tool chain, in the xbuildtool/ directory,
+# with "make setup" and then "make armv7-2.16-gnueabi".  Read these files to
+# learn how to build a cross-tool chain:
+# => xbuildtool/xbuildtool.guide.txt
+# => xbuildtool/README
+# => ttylinux-build/How_To_Build_ttylinux.txt
+
+make setup
+make armv7-2.16-gnueabi
+
+# ==============
+# ttylinux-build
+# ==============
+#
+# Go into the ttylinux-build/ directory and read How_To_Build_ttylinux.txt
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# -----------------------------------
+# Client Configuration and Connection
+# -----------------------------------
+#
+# Login from client; use gtkterm.
+#
+# gtkterm config:
+#              Port: /dev/ttyUSB[0-9]
+#             Speed: 115200
+#            Parity: none
+#              Bits: 8
+#          Stopbits: 1
+#      Flow control: none
+
+# ----------------------------------------------
+# Notes on the BeagleBone's Run-time Environment
+# ----------------------------------------------
+#
+# o Use "modprobe g_mass_storage file=/dev/mmcblk0p1" so the USB host can
+#   browse the BeagleBone SDCard boot partition.
+#
+# o Mount debugfs: mount -t debugfs none /sys/kernel/debug/
+#   for /etc/fstab: nodev  /sys/kernel/debug  debugfs  defaults  0  0
+
+
+#***** broken broken broken broken broken broken broken broken broken
+# http://www.gigamegablog.com/2012/01/05/beaglebone-coding-101-blinking-an-led/
+# http://www.gigamegablog.com/2012/01/22/beaglebone-coding-101-using-the-serial-and-analog-pins/
+#***** o For ttyO2:
+#*****        (see Table 9-58 of the AM335x Technical Reference Manual)
+#*****        echo  1 >> /sys/kernel/debug/omap_mux/spi0_d0
+#*****        echo 21 >> /sys/kernel/debug/omap_mux/spi0_sclk
+#*****        wiring: yellow<->pin22, green<->pin21
+#***** broken broken broken broken broken broken broken broken broken
+
+
+# ***************************************************************************
+# ***************************************************************************
+
+
+# ============================ *******
+# ttylinux v14.1, Kernel 3.2.9 DEFUNCT
+# ============================ *******
+
+# For no apparent reason I am using this kernel:
+#
+https://github.com/koenkooi/linux/
+linux-ti33x-psp-3.2-r10d+gitre8004dad869568692ca2a45c04e8464ce48cc4d7 branch
+
+# The file koenkooi-linux-v3.2-rc5-13594-gf836756.zip is un-zipped and the
+# top-level directory renamed from "koenkooi-linux-d623fcd/" to "linux-3.2.9/",
+# and then tarred-up.  The new linux-3.2.9.tar.bz2 is used by xbuildtools and
+# the ttylinux build system to make the current BeagleBone ttylinux.
+#
+unzip koenkooi-linux-v3.2-rc5-13113-gd623fcd.zip
+mv koenkooi-linux-d623fcd/ linux-3.2.9/
+tar -cjf linux-3.2.9.tar.bz2 linux-3.2.9/
+
