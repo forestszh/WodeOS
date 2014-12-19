@@ -1,0 +1,4 @@
+usr/bin/dvtm
+usr/bin/dvtm-status
+usr/share/terminfo/d/dvtm
+usr/share/terminfo/d/dvtm-256color

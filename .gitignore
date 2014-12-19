@@ -46,6 +46,43 @@ ttylinux-build/var/files
 ttylinux-build/var/log/[^.]*
 ttylinux-build/var/run/[^.]*
 
+# wodeos build system
+wodeos-build/Site
+wodeos-build/bootloader/isolinux/isolinux.bin
+wodeos-build/bootloader/isolinux/syslinux
+wodeos-build/bootloader/uboot/*.MAKELOG
+wodeos-build/bootloader/uboot/MLO
+wodeos-build/bootloader/uboot/mkimage
+wodeos-build/bootloader/uboot/u-boot.bin
+wodeos-build/bootloader/uboot/u-boot.img
+wodeos-build/bootloader/xload
+wodeos-build/config/platform-wrtu54g_tm/adm8668.tar.bz2
+wodeos-build/build/[^.]*
+wodeos-build/doc/User_Guide.aux
+wodeos-build/doc/User_Guide.dvi
+wodeos-build/doc/User_Guide.html
+wodeos-build/doc/User_Guide.log
+wodeos-build/doc/User_Guide.pdf
+wodeos-build/doc/User_Guide.ps
+wodeos-build/doc/User_Guide.toc
+wodeos-build/doc/multi
+wodeos-build/doc/single
+wodeos-build/doc/temp.*
+wodeos-build/img/[^.]*
+wodeos-build/mnt/[^.]*
+wodeos-build/pkg-bin/[^.]*
+wodeos-build/pkg-cfg/glibc-devel-2.16.0/files-*
+wodeos-build/pkg-src/[^.]*
+wodeos-build/site/[^.]*
+wodeos-build/sysroot/[^.]*
+wodeos-build/test/data-*
+wodeos-build/test/v*
+wodeos-build/ttylinux-config.sh
+wodeos-build/ttylinux-pkglst.txt
+wodeos-build/var/files
+wodeos-build/var/log/[^.]*
+wodeos-build/var/run/[^.]*
+
 # cross-tool builder
 xbuildtool/bin-link/[^.]*
 xbuildtool/build/[^.]*

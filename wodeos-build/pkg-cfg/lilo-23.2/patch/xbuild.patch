@@ -1,0 +1,46 @@
+	Fixes for cross building.
+	2011-01-10 <douglas@ttylinux.net>
+
+diff -Naur lilo-23.2-OLD/Makefile lilo-23.2-NEW/Makefile
+--- lilo-23.2-OLD/Makefile	2011-04-09 08:14:05.000000000 -0700
++++ lilo-23.2-NEW/Makefile	2012-12-22 10:17:48.822485470 -0700
+@@ -38,7 +38,6 @@
+ #
+ all: test
+ 	$(MAKE) -C src all
+-	$(MAKE) -C images all
+ 
+ #
+ # everything above plus the statically linked version
+diff -Naur lilo-23.2-OLD/make.vars lilo-23.2-NEW/make.vars
+--- lilo-23.2-OLD/make.vars	2011-04-09 07:59:26.000000000 -0700
++++ lilo-23.2-NEW/make.vars	2012-12-22 10:19:20.191434546 -0700
+@@ -99,9 +99,9 @@
+   cat $$DESTDIR/etc/lilo.defines; else echo $(CONFIG); fi ) | \
+   sed 's/-D/-DLCF_/g'`
+ LILO=-DLILO=0xbb920890
+-KVER=`if [ -f /usr/include/linux/version.h ]; then echo -DHAS_VERSION_H; fi`
+-HDM=`if [ -f /usr/include/libdevmapper.h ]; then echo -DHAS_LIBDEVMAPPER_H; fi`
+-DEVMAPPER=`if [ -f /usr/include/libdevmapper.h ]; then echo "-ldevmapper"; fi`
++KVER=`if [ 1 -eq 1 ]; then echo -DHAS_VERSION_H; fi`
++HDM=`if [ 0 -eq 1 ]; then echo -DHAS_LIBDEVMAPPER_H; fi`
++DEVMAPPER=`if [ 0 -eq 1 ]; then echo "-ldevmapper"; fi`
+ 
+ TMP=_TmP_
+ 
+diff -Naur lilo-23.2-OLD/src/Makefile lilo-23.2-NEW/src/Makefile
+--- lilo-23.2-OLD/src/Makefile	2011-04-09 07:59:26.000000000 -0700
++++ lilo-23.2-NEW/src/Makefile	2012-12-22 10:20:09.659865481 -0700
+@@ -254,10 +254,10 @@
+ 	mv tmp_make Makefile
+ 
+ version:	common.c lilo.h common.h
+-	$(CC) $(CFLAGS) -DSHS_MAIN -o version common.c
++	$(BUILD_CC) -DSHS_MAIN -o version common.c
+ 
+ mkloader:	temp.c
+-	$(CC) $(CFLAGS) -DLILO_BINARY -o mkloader temp.c
++	$(BUILD_CC) -DLILO_BINARY -o mkloader temp.c
+ 
+ 
+ tidy:

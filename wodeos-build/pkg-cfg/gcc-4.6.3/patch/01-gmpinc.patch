@@ -1,0 +1,27 @@
+	The target sysroot include file directory is used when compiling some
+	of the helper programs that run on the build host during the GCC build
+	process.  This patch avoids that problem by taking out the GMP include
+	path, as it is the target sysroot include path.
+	2012-12-15 <douglas@ttylinux.org>
+
+--- gcc-4.6.3-OLD/gcc/Makefile.in	2011-08-20 00:51:09.000000000 -0700
++++ gcc-4.6.3-NEW/gcc/Makefile.in	2013-05-22 19:16:05.231581164 -0700
+@@ -3807,14 +3807,15 @@
+ # How to compile object files to run on the build machine.
+ 
+ build/%.o :  # dependencies provided by explicit rule later
+-	$(COMPILER_FOR_BUILD) -c $(BUILD_COMPILERFLAGS) $(BUILD_CPPFLAGS) \
+-		-o $@ $<
++	@echo "BLAGSTER: remove $(GMPINC)"
++	$(COMPILER_FOR_BUILD) -c $(BUILD_COMPILERFLAGS) $(filter-out $(GMPINC), $(BUILD_CPPFLAGS)) -o $@ $<
+ 
+ ## build/version.o is compiled by the $(COMPILER_FOR_BUILD) but needs
+ ## several C macro definitions, just like version.o
+ build/version.o:  version.c version.h \
+                   $(REVISION) $(DATESTAMP) $(BASEVER) $(DEVPHASE)
+-	$(COMPILER_FOR_BUILD) -c $(BUILD_COMPILERFLAGS) $(BUILD_CPPFLAGS) \
++	@echo "BLAGSTER: remove $(GMPINC)"
++	$(COMPILER_FOR_BUILD) -c $(BUILD_COMPILERFLAGS) $(filter-out $(GMPINC), $(BUILD_CPPFLAGS)) \
+ 	-DBASEVER=$(BASEVER_s) -DDATESTAMP=$(DATESTAMP_s) \
+ 	-DREVISION=$(REVISION_s) \
+ 	-DDEVPHASE=$(DEVPHASE_s) -DPKGVERSION=$(PKGVERSION_s) \
