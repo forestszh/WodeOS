@@ -1,0 +1,332 @@
+[root@centos wodeos-build]# make dist
+Download ttylinux source packages.
+i> Getting source code packages [be patient, this will not lock up].
+i> Local cache directory: /root/Download
+i> Checking ttylinux-basefs-1.0 ......... (local)
+i> Checking glibc-2.16.0 ................ (comes from cross-tools)
+i> Checking glibc-devel-2.16.0 .......... (comes from cross-tools)
+i> Checking ncurses-5.9 ................. have it
+i> Checking kmod-13 ..................... have it
+i> Checking readline-6.2 ................ have it
+i> Checking alsa-lib-1.0.27 ............. have it
+i> Checking gmp-5.0.5 ................... have it
+i> Checking mpfr-3.1.1 .................. have it
+i> Checking mpc-1.0.1 ................... have it
+i> Checking util-linux-2.23 ............. have it
+i> Checking bash-4.2 .................... have it
+i> Checking busybox-1.21.0 .............. have it
+i> Checking e2fsprogs-1.42.7 ............ have it
+i> Checking iptables-1.4.18 ............. have it
+i> Checking lilo-23.2 ................... have it
+i> Checking ntfs-3g_ntfsprogs-2013.1.13 . have it
+i> Checking ttylinux-utils-1.5 .......... (local)
+i> Checking udev-182 .................... have it
+i> Checking binutils-2.23 ............... have it
+i> Checking gcc-4.6.3 ................... have it
+i> Checking make-3.82 ................... have it
+i> Checking dropbear-2013.58 ............ have it
+i> Checking gpm-1.20.7 .................. have it
+i> Checking ppp-2.4.5 ................... have it
+i> Checking thttpd-2.25b ................ have it
+i> Checking alsa-utils-1.0.27 ........... have it
+i> Checking calc-2.12.4.4 ............... have it
+i> Checking dtach-0.8 ................... have it
+i> Checking dvtm-0.9 .................... have it
+i> Checking haserl-0.9.29 ............... have it
+i> Checking lua-5.2.2 ................... have it
+i> Checking lynx-2.8.7 .................. have it
+i> Checking nano-2.2.6 .................. have it
+i> Fetched 34 packages.
+Remove the built items.
+=> Removing file system image, boot CD image, SDCard image, source image.
+=> Removing boot CD-ROM, SD Card staging areas.
+=> Removing boot CD-ROM, SD Card staging areas.
+=> Removing kernel modules package, if any.
+=> Removing kernel and module tree, if any.
+=> Removing the packages:
+   -> Removing build/packages contents.
+   -> Removing sysroot contents.
+   -> Removing pkg-bin/ binary packages.
+   -> Removing var/log/ build logs.
+   -> Removing var/run/done. build flags.
+=> Removing isolinux, if any.
+Initialize the pc_i686 ttylinux build.
+=> Creating preliminary development build directories ... DONE
+
+=> Making isolinux
+   version ... 4.05
+   patch ..... none
+   for ....... none
+=> Removing old build products, if any, and untarring ...
+=> New files:
+-rw-r--r--. 1 root root 24K Dec 28 16:15 isolinux.bin
+-rwxr-xr-x. 1 root root 51K Dec 28 16:15 syslinux
+Building for pc_i686
+Make the ttylinux packages.
+=> ttylinux project directory:
+   /root/WodeOS/wodeos-build
+=> ttylinux-16.1 [bricolage]
+=> with i686-generic-linux-gnu cross-tool chain
+=> with i686 cross-building Binutils binutils-2.23
+=> with i686 cross-building GCC gcc-4.6.3
+=> with libc glibc-2.16.0, kernel interface:
+        libc interface to Linux kernel i386 architecture
+        libc interface to Linux kernel linux-3.7.1
+=> for 96 MB target file system image size
+
+##### START cross-building packages
+g - getting the source and configuration packages
+b - building and installing the package into sysroot
+f - finding installed files
+m - looking for man pages to compress
+p - creating ttylinux-installable package
+c - cleaning
+
+ttylinux-basefs-1.0 ........... g.b.f.m___0.p.c ... DONE [ 0 minutes  2 seconds]
+glibc-2.16.0 .................. g.b.f.m___0.p.c ... DONE [ 0 minutes 31 seconds]
+glibc-devel-2.16.0 ............ g.b.f.m___0.p.c ... DONE [ 0 minutes 22 seconds]
+ncurses-5.9 ................... g.b.f.m_863.p.c ... DONE [ 2 minutes 10 seconds]
+kmod-13 ....................... g.b.f.m__10.p.c ... DONE [ 0 minutes 16 seconds]
+readline-6.2 .................. g.b.f.m___2.p.c ... DONE [ 0 minutes 29 seconds]
+alsa-lib-1.0.27 ............... g.b.f.m___0.p.c ... DONE [ 0 minutes 58 seconds]
+gmp-5.0.5 ..................... g.b.f.m___0.p.c ... DONE [ 2 minutes  3 seconds]
+mpfr-3.1.1 .................... g.b.f.m___0.p.c ... DONE [ 1 minutes 19 seconds]
+mpc-1.0.1 ..................... g.b.f.m___0.p.c ... DONE [ 0 minutes 25 seconds]
+util-linux-2.23 ............... g.b.f.m___0.p.c ... DONE [ 1 minutes 22 seconds]
+bash-4.2 ...................... g.b.f.m___0.p.c ... DONE [ 1 minutes 22 seconds]
+busybox-1.21.0 ................ g.b.f.m___0.p.c ... DONE [ 2 minutes  5 seconds]
+e2fsprogs-1.42.7 .............. g.b.f.m__40.p.c ... DONE [ 0 minutes 57 seconds]
+iptables-1.4.18 ............... g.b.f.m___8.p.c ... DONE [ 0 minutes 29 seconds]
+lilo-23.2 ..................... g.b.f.m___0.p.c ... DONE [ 0 minutes  8 seconds]
+ntfs-3g_ntfsprogs-2013.1.13 ... g.b.f.m__20.p.c ... DONE [ 1 minutes  5 seconds]
+ttylinux-utils-1.5 ............ g.b.f.m___0.p.c ... DONE [ 0 minutes  1 seconds]
+udev-182 ...................... g.b.f.m___4.p.c ... DONE [ 0 minutes 28 seconds]
+binutils-2.23 ................. g.b.f.m__19.p.c ... DONE [ 4 minutes 15 seconds]
+gcc-4.6.3 ..................... g.b.f.m___6.p.c ... DONE [86 minutes 16 seconds]
+make-3.82 ..................... g.b.f.m___1.p.c ... DONE [ 0 minutes 24 seconds]
+dropbear-2013.58 .............. g.b.f.m___0.p.c ... DONE [ 0 minutes 52 seconds]
+gpm-1.20.7 .................... g.b.f.m___5.p.c ... DONE [ 0 minutes 41 seconds]
+ppp-2.4.5 ..................... g.b.f.m___0.p.c ... DONE [ 0 minutes 24 seconds]
+thttpd-2.25b .................. g.b.f.m___0.p.c ... DONE [ 0 minutes 10 seconds]
+alsa-utils-1.0.27 ............. g.b.f.m__15.p.c ... DONE [ 0 minutes 28 seconds]
+calc-2.12.4.4 ................. g.b.f.m___0.p.c ... DONE [ 1 minutes  0 seconds]
+dtach-0.8 ..................... g.b.f.m___0.p.c ... DONE [ 0 minutes  5 seconds]
+dvtm-0.9 ...................... g.b.f.m___1.p.c ... DONE [ 0 minutes  4 seconds]
+haserl-0.9.29 ................. g.b.f.m___1.p.c ... DONE [ 0 minutes  7 seconds]
+lua-5.2.2 ..................... g.b.f.m___0.p.c ... DONE [ 0 minutes 13 seconds]
+lynx-2.8.7 .................... g.b.f.m___0.p.c ... DONE [ 1 minutes 33 seconds]
+nano-2.2.6 .................... g.b.f.m___3.p.c ... DONE [ 0 minutes 21 seconds]
+=> 113 minutes 25 seconds
+
+##### DONE cross-building packages
+Make the ttylinux kernel.
+=> ttylinux project directory:
+   /root/WodeOS/wodeos-build
+=> ttylinux-16.1 [bricolage]
+=> with i686-generic-linux-gnu cross-tool chain
+=> with i686 cross-building Binutils binutils-2.23
+=> with i686 cross-building GCC gcc-4.6.3
+=> with libc glibc-2.16.0, kernel interface:
+        libc interface to Linux kernel i386 architecture
+        libc interface to Linux kernel linux-3.7.1
+=> for 96 MB target file system image size
+
+##### START cross-building the kernel
+g - getting the source and configuration packages
+b - building and installing the package into build directory
+f - finding installed files
+m - looking for man pages to compress
+p - creating installable package
+c - cleaning
+
+i686 linux-3.7.1 ......... g.b.f.m__0.p.c ... DONE [58 minutes 13 seconds]
+
+##### DONE cross-building the kernel
+Make ttylinux root file system initrd image.
+=> ttylinux project directory:
+   /root/WodeOS/wodeos-build
+=> ttylinux-16.1 [bricolage]
+=> with i686-generic-linux-gnu cross-tool chain
+=> with i686 cross-building Binutils binutils-2.23
+=> with i686 cross-building GCC gcc-4.6.3
+=> with libc glibc-2.16.0, kernel interface:
+        libc interface to Linux kernel i386 architecture
+        libc interface to Linux kernel linux-3.7.1
+=> for 96 MB target file system image size
+
+=> Creating ttylinux file system image (96 MB)... 
+96+0 records in
+96+0 records out
+100663296 bytes (101 MB) copied, 4.67751 s, 21.5 MB/s
+...DONE
+
+Mounting ..... OK
+Unmounting ... OK
+
+##### START installing
+Mounting ..... OK
+i> Making package list ... DONE
+i> Installing packages.
+=> ttylinux-basefs-1.0
+=> alsa-lib-1.0.27
+=> alsa-utils-1.0.27
+=> bash-4.2
+=> binutils-2.23
+=> busybox-1.21.0
+=> calc-2.12.4.4
+=> dropbear-2013.58
+=> dtach-0.8
+=> dvtm-0.9
+=> e2fsprogs-1.42.7
+=> gcc-4.6.3
+=> glibc-2.16.0
+=> glibc-devel-2.16.0
+=> gmp-5.0.5
+=> gpm-1.20.7
+=> haserl-0.9.29
+=> iptables-1.4.18
+=> kmod-13
+=> kmodules-3.7.1
+=> lilo-23.2
+=> lua-5.2.2
+=> lynx-2.8.7
+=> make-3.82
+=> mpc-1.0.1
+=> mpfr-3.1.1
+=> nano-2.2.6
+=> ncurses-5.9
+=> ntfs-3g_ntfsprogs-2013.1.13
+=> ppp-2.4.5
+=> readline-6.2
+=> thttpd-2.25b
+=> ttylinux-utils-1.5
+=> udev-182
+=> util-linux-2.23
+i> Updating birthdays ... DONE
+File system usage [file system size=96MB]:
+62M	/root/WodeOS/wodeos-build/mnt
+Unmounting ... OK
+tune2fs 1.41.12 (17-May-2010)
+Setting maximal mount count to 3
+Setting current mount count to 0
+-rw-r--r--. 1 root root 96M Dec 28 19:09 img/file_sys-pc_i686-16.1.img
+i> File system image file file_sys-pc_i686-16.1.img is ready.
+##### DONE installing
+
+Make ttylinux distribution directory.
+##### START cross-building the distribution directory
+
+i> Recreating ISO directory .......................... DONE
+i> Gathering boot files .............................. DONE
+i> Compress the root file system initrd .............. DONE
+i> Set the initrd file system size ................... DONE
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+default ttylinux
+display boot.msg
+prompt  1
+timeout 150
+
+F1 boot.msg
+F2 help_f2.msg
+F3 help_f3.msg
+F4 help_f4.msg
+
+label ttylinux
+	kernel /boot/vmlinuz
+	append initrd=/boot/filesys.gz ramdisk_size=98304 root=/dev/ram0 ro ttylinux-cdrom
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+i> Copying configuration data and tools to Boot CD ... DONE
+i> Copying documentation files to Boot CD ............ 
+WARNING no User_Guide.html
+WARNING no User_Guide.pdf
+cp: cannot stat `/root/WodeOS/wodeos-build/doc/User_Guide.tex': No such file or directory
+DONE
+i> Copying packages to Boot CD ....................... DONE
+i> Getting the build logs ............................ DONE
+
+##### DONE cross-building the distribution directory
+Make a ttylinux distribution image file system.
+##### START cross-building the boot image
+
+
+i> Creating CD-ROM ISO image ...
+Using TTYLI000.;1 for  cdrom/config/ttylinux-flash (ttylinux-setup)
+Using TTYLI000.BZ2;1 for  cdrom/logs/ttylinux-basefs-1.0.log.bz2 (ttylinux-utils-1.5.log.bz2)
+Using TTYLI000.TBZ;1 for  cdrom/packages/ttylinux-utils-1.5-i686.tbz (ttylinux-basefs-1.0-i686.tbz)
+Size of boot image is 4 sectors -> No emulation
+ 14.98% done, estimate finish Sun Dec 28 19:09:19 2014
+ 29.97% done, estimate finish Sun Dec 28 19:09:19 2014
+ 44.92% done, estimate finish Sun Dec 28 19:09:19 2014
+ 59.88% done, estimate finish Sun Dec 28 19:09:19 2014
+ 74.85% done, estimate finish Sun Dec 28 19:09:19 2014
+ 89.82% done, estimate finish Sun Dec 28 19:09:19 2014
+Total translation table size: 2048
+Total rockridge attributes bytes: 10418
+Total directory bytes: 22528
+Path table size(bytes): 104
+Max brk space used 11000
+33416 extents written (65 MB)
+... DONE
+
+-rw-r--r--. 1 root root 66M Dec 28 19:09 img/ttylinux-pc_i686-16.1.iso
+i> ISO image file ttylinux-pc_i686-16.1.iso is ready.
+
+##### DONE cross-building the boot image
+Make source distribution ISO image.
+
+##### START getting source packages
+
+i> Recreating source package staging directory ....... DONE
+
+i> Getting bootloader files, if any .................. DONE
+i> Getting standard packages:
+ttylinux-basefs-1.0 ........ (none) - [no patches]  DONE [ 0 minutes  0 seconds]
+glibc-2.16.0 ............... (none) - [no patches]  DONE [ 0 minutes  0 seconds]
+glibc-devel-2.16.0 ......... (none) - [no patches]  DONE [ 0 minutes  0 seconds]
+ncurses-5.9 ................ got it - [no patches]  DONE [ 0 minutes  0 seconds]
+kmod-13 .................... got it - [no patches]  DONE [ 0 minutes  0 seconds]
+readline-6.2 ............... got it - [no patches]  DONE [ 0 minutes  1 seconds]
+alsa-lib-1.0.27 ............ got it - [no patches]  DONE [ 0 minutes  0 seconds]
+gmp-5.0.5 .................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+mpfr-3.1.1 ................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+mpc-1.0.1 .................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+util-linux-2.23 ............ got it - [no patches]  DONE [ 0 minutes  0 seconds]
+bash-4.2 ................... got it - got patch(s)  DONE [ 0 minutes  1 seconds]
+busybox-1.21.0 ............. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+e2fsprogs-1.42.7 ........... got it - [no patches]  DONE [ 0 minutes  1 seconds]
+iptables-1.4.18 ............ got it - [no patches]  DONE [ 0 minutes  0 seconds]
+lilo-23.2 .................. got it - got patch(s)  DONE [ 0 minutes  0 seconds]
+ntfs-3g_ntfsprogs-2013.1.13  got it - [no patches]  DONE [ 0 minutes  0 seconds]
+ttylinux-utils-1.5 ......... (none) - [no patches]  DONE [ 0 minutes  0 seconds]
+udev-182 ................... got it - [no patches]  DONE [ 0 minutes  0 seconds]
+binutils-2.23 .............. got it - [no patches]  DONE [ 0 minutes  1 seconds]
+gcc-4.6.3 .................. got it - got patch(s)  DONE [ 0 minutes 48 seconds]
+make-3.82 .................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+dropbear-2013.58 ........... got it - got patch(s)  DONE [ 0 minutes  1 seconds]
+gpm-1.20.7 ................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+ppp-2.4.5 .................. got it - got patch(s)  DONE [ 0 minutes  1 seconds]
+thttpd-2.25b ............... got it - got patch(s)  DONE [ 0 minutes  0 seconds]
+alsa-utils-1.0.27 .......... got it - [no patches]  DONE [ 0 minutes  1 seconds]
+calc-2.12.4.4 .............. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+dtach-0.8 .................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+dvtm-0.9 ................... got it - [no patches]  DONE [ 0 minutes  0 seconds]
+haserl-0.9.29 .............. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+lua-5.2.2 .................. got it - [no patches]  DONE [ 0 minutes  0 seconds]
+lynx-2.8.7 ................. (none) - [no patches]  DONE [ 0 minutes  0 seconds]
+nano-2.2.6 ................. got it - [no patches]  DONE [ 0 minutes  1 seconds]
+
+i> Getting Linux kernel and libc ..................... DONE
+
+i> Getting platform configuration and patches ........ DONE
+i> Setting ownership and mode bits ................... DONE
+i> Creating CD-ROM ISO image ......................... DONE
+
+-rw-r--r--. 1 root root 234M Dec 28 19:11 img/ttylinux-pc_i686-16.1-src.iso
+
+=> 2 minutes 28 seconds
+
+##### DONE getting source packages
+

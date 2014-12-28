@@ -110,6 +110,7 @@ etc/rc.d/rc.startup/90.crond
 etc/rc.d/rc.sysdone
 etc/rc.d/rc.sysinit
 etc/securetty
+etc/security/limits.conf
 etc/services
 etc/shadow
 etc/shells
@@ -144,6 +145,7 @@ etc/sysconfig/network-scripts/ifup-usb1
 etc/sysconfig/sound-files
 etc/sysconfig/sound-scripts/play
 etc/sysconfig/syslog
+etc/sysctl.conf
 home/ftpd/
 home/tftpd/
 sbin/arp
