@@ -1,7 +1,8 @@
-See the files in the doc/ directory.
+请查看在doc/目录下的文件。
 
-You probably want to read the doc/How_To_Build_ttylinux.txt file.  It says you
-need to go to the xbuildtool directory and read something there to know how to
-build a cross-tool chain, and it says how ttylinux.
+你可能想要读doc/下的How_To_Build_WodeOS.txt文件。它仅仅告诉你需要先到xbuildtool目录读相应的文件，
+知道怎样创建交叉编译环境链，然后再读怎样创建WodeOS。(*^__^*) 嘻嘻……
 
+-------------
+Hellin
 Chop wood, carry water.
