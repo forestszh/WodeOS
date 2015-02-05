@@ -109,9 +109,9 @@ TTYLINUX_VAR_DIR="${TTYLINUX_DIR}/var"
 nameTag="${TTYLINUX_PLATFORM}-${TTYLINUX_VERSION}"
 TTYLINUX_IMG_NAME="${TTYLINUX_DIR}/img/file_sys-${nameTag}.img"
 TTYLINUX_IRD_NAME="${TTYLINUX_DIR}/img/initrd-${nameTag}"
-TTYLINUX_TAR_NAME="${TTYLINUX_DIR}/img/ttylinux-${nameTag}.tar.bz2"
-TTYLINUX_SRC_NAME="${TTYLINUX_DIR}/img/ttylinux-${nameTag}-src.iso"
-TTYLINUX_ISO_NAME="${TTYLINUX_DIR}/img/ttylinux-${nameTag}.iso"
+TTYLINUX_TAR_NAME="${TTYLINUX_DIR}/img/wodeos-${nameTag}.tar.bz2"
+TTYLINUX_SRC_NAME="${TTYLINUX_DIR}/img/wodeos-${nameTag}-src.iso"
+TTYLINUX_ISO_NAME="${TTYLINUX_DIR}/img/wodeos-${nameTag}.iso"
 unset nameTag
 
 return 0
