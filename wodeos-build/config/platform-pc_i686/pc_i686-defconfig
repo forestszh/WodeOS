@@ -78,7 +78,7 @@ TTYLINUX_PACKAGE[i++]="make-3.82"
 TTYLINUX_PACKAGE[i++]="dropbear-2013.58"
 TTYLINUX_PACKAGE[i++]="gpm-1.20.7"
 TTYLINUX_PACKAGE[i++]="ppp-2.4.5"
-TTYLINUX_PACKAGE[i++]="thttpd-2.25b"
+#TTYLINUX_PACKAGE[i++]="thttpd-2.25b"
 # ---------------------------------------------------------------- applications
 TTYLINUX_PACKAGE[i++]="alsa-utils-1.0.27"
 TTYLINUX_PACKAGE[i++]="calc-2.12.4.4"
