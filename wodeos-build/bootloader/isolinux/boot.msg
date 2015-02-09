@@ -5,7 +5,7 @@
 04WodeOS07 is distributed with ABSOLUTELY NO WARRANTY.
 0bhttp://www.360diy.org07
 
-09ttylinux boot options:07
+09WodeOS boot options:07
  console=<ttyS*>09 ............... Use serial dev 07<ttyS*>09 for console login.07
  login=<ttyS*>[,<ttyS*>]09 ....... Include the listed serial devs for login.07
  nologin=<tty*>[,<tty*>]09 ....... Remove the listed serial devs from login.07
