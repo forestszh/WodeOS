@@ -4,10 +4,10 @@
 `| |'`| |' >  / | |__ | || .` || || | >  <
  `-'  `-'  `-'  `----'`-'`-'`-'`----''-'`-`
 
- ttylinux is distributed with ABSOLUTELY NO WARRANTY.
- http://www.ttylinux.org
+ WodeOS is distributed with ABSOLUTELY NO WARRANTY.
+ http://www.360diy.org
 
-ttylinux boot options:
+WodeOS boot options:
 
  console=<ttyS*> ............... Use serial dev <ttyS*> for console login.
  login=<ttyS*>[,<ttyS*>] ....... Include the listed serial devs for login.

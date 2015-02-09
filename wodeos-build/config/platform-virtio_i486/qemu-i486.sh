@@ -48,10 +48,10 @@ cat - <<EOF
  \`-'  \`-'  \`-'  \`----'\`-'\`-'\`-'\`----''-'\`-\`
 EOF
 echo ""
-echo -e "\e[1;34mttylinux\e[0;39m is distributed with ABSOLUTELY NO WARRANTY."
-echo -e "\e[1;36mhttp://www.ttylinux.org\e[0;39m"
+echo -e "\e[1;34mWodeOS\e[0;39m is distributed with ABSOLUTELY NO WARRANTY."
+echo -e "\e[1;36mhttp://www.360diy.org\e[0;39m"
 echo ""
-echo -e "\e[34mttylinux boot options:\e[0;39m"
+echo -e "\e[34mWodeOS boot options:\e[0;39m"
 echo ""
 echo -e " console=<tty*>\e[34m ............ Use serial port ttyS* for console and login.\e[0;39m"
 echo -e "                             \e[34mFor \e[0;39m<tty*>\e[34m use one of \e[0;39mttyS0\e[34m, \e[0;39mttyS1\e[34m, \e[0;39mttyS2\e[34m, \e[0;39mttyS3\e[0;39m"

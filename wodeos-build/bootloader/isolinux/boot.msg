@@ -2,8 +2,8 @@
 `| |'`| |' >  / | |__ | || .` || || | >  < 
  `-'  `-'  `-'  `----'`-'`-'`-'`----''-'`-`07
 
-04ttylinux07 is distributed with ABSOLUTELY NO WARRANTY.
-0bhttp://www.ttylinux.org07
+04WodeOS07 is distributed with ABSOLUTELY NO WARRANTY.
+0bhttp://www.360diy.org07
 
 09ttylinux boot options:07
  console=<ttyS*>09 ............... Use serial dev 07<ttyS*>09 for console login.07
