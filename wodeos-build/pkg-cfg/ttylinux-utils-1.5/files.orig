@@ -4,5 +4,6 @@ home/user/README-problems.txt
 root/README-problems.txt
 root/install.conf
 sbin/ttylinux-flash
+sbin/ttylinux-installer
 sbin/installer
 usr/bin/pacman
