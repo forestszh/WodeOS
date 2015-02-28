@@ -1,0 +1,8 @@
+i> Copying configuration data and tools to Boot CD ... DONE
+i> Copying documentation files to Boot CD ............ 
+WARNING no User_Guide.html
+WARNING no User_Guide.pdf
+cp: cannot stat `/root/WodeOS/wodeos-build/doc/User_Guide.tex': No such file or directory
+DONE
+
+
